@@ -18,7 +18,7 @@ export class List<T> {
 
   public append(appendList: List<T>): any {
     appendList.valueList.forEach((elem) => this.valueList.push(elem));
-    return this; //new List(this.valueList);
+    return this;
   }
 
   public concat(concatList: List<T>): any {
@@ -50,12 +50,6 @@ export class List<T> {
     return numberList;
   }
 
-  // foldl<U, V>(f: (acc: U, elem: T) => U, start: U): U {
-  //   if (this.length() === 0) {
-  //     return start;
-  //   }
-  //   return List.create(this.valueList.slice(1)).foldl(f, f(start, this.valueList[0]));
-  // }
   public foldl<N, M>(customCallbackFn: (acc: N, el: T) => N, defaultValue: N) {
     if (this.valueList.length == 0) return defaultValue;
 
